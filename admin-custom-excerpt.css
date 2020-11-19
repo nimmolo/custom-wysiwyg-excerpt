@@ -1,0 +1,36 @@
+/*!
+admin special styles for special excerpt box, adapted from Rilwis
+
+not hidden: .postbox.excerpt-seamless .postbox-header,
+*/
+
+/* Seamless style
+--------------------------------------------------------------*/
+.excerpt-seamless {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding-top: 20px;
+}
+
+.excerpt-seamless .inside {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.postbox.excerpt-seamless .postbox-header {
+  display: none;
+}
+
+.postbox.excerpt-seamless .inside label {
+  float: left;
+  font-weight: bold;
+  padding-top: 6px;
+}
+
+.postbox.excerpt-seamless .hndle,
+.postbox.excerpt-seamless .handlediv,
+.postbox.excerpt-seamless .handle-actions {
+  display: none;
+}
