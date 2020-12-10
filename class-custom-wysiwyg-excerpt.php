@@ -31,15 +31,22 @@ if ( ! class_exists( "Custom_Wysiwyg_Excerpt" ) ) :
 
     // Get existing post types (can only do after init)
     public function init() {
+
       if ( ! is_admin() ) {
         return;
       }
+      // $this->post_types = array( 'post', 'exhibition', 'publication' );
 
+      // The following gets all public post types
       $post_type_args = array(
         'public' => true
       );
-      $this->post_types = get_post_types( $post_type_args, 'names', 'and' );
-      // $this->post_types = array( 'post', 'exhibition', 'publication' );
+      $post_types = get_post_types( $post_type_args, 'names', 'and' );
+      // Remove 'attachment'
+      $position = '';
+      $position = array_search( 'attachment', $post_types );
+      if( $position !== false ) unset( $post_types[$position] );
+      $this->post_types = $post_types;
 
       $this->label = __( 'Excerpt' );
     }
